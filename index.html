@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ReportAI - Trợ lý AI giúp sinh viên viết báo cáo kỹ thuật chuyên nghiệp. Tạo dàn bài, viết nội dung, kiểm tra chất lượng và nhiều tính năng hữu ích khác.">
+  <meta name="theme-color" content="#080b14">
+  <title>ReportAI - Trợ lý Báo cáo Kỹ thuật</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app-container" id="app-container">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <aside class="sidebar" id="sidebar" aria-label="Thanh điều hướng chính">
+    <div class="sidebar-logo">
+      <span class="logo-icon" aria-hidden="true">📝</span>
+      <div class="logo-text">
+        <h1 class="logo-title">ReportAI</h1>
+        <p class="logo-subtitle">Trợ lý Báo cáo Kỹ thuật</p>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Menu chính">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <button class="nav-btn active" data-target="dashboard" aria-label="Trang chủ" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">🏠</span>
+            <span class="nav-label">Trang chủ</span>
+          </button>
+        </li>
+
+        <li class="nav-section-title">CÔNG CỤ</li>
+
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-a" aria-label="Tạo Dàn Bài">
+            <span class="nav-icon" aria-hidden="true">📋</span>
+            <span class="nav-label">Tạo Dàn Bài</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-b" aria-label="Viết Nội Dung">
+            <span class="nav-icon" aria-hidden="true">✍️</span>
+            <span class="nav-label">Viết Nội Dung</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-c" aria-label="Viết Lại Văn Bản">
+            <span class="nav-icon" aria-hidden="true">🔄</span>
+            <span class="nav-label">Viết Lại Văn Bản</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-d" aria-label="Mô Tả Hệ Thống">
+            <span class="nav-icon" aria-hidden="true">🏗️</span>
+            <span class="nav-label">Mô Tả Hệ Thống</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-e" aria-label="Mô Tả Hình Ảnh">
+            <span class="nav-icon" aria-hidden="true">🖼️</span>
+            <span class="nav-label">Mô Tả Hình Ảnh</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-f" aria-label="Viết Kết Luận">
+            <span class="nav-icon" aria-hidden="true">📊</span>
+            <span class="nav-label">Viết Kết Luận</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-g" aria-label="Kiểm Tra Chất Lượng">
+            <span class="nav-icon" aria-hidden="true">✅</span>
+            <span class="nav-label">Kiểm Tra Chất Lượng</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-h" aria-label="Định Dạng Word">
+            <span class="nav-icon" aria-hidden="true">📐</span>
+            <span class="nav-label">Định Dạng Word</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-i" aria-label="Đề Xuất Cải Tiến">
+            <span class="nav-icon" aria-hidden="true">💡</span>
+            <span class="nav-label">Đề Xuất Cải Tiến</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-j" aria-label="Tạo Trích Dẫn">
+            <span class="nav-icon" aria-hidden="true">📚</span>
+            <span class="nav-label">Tạo Trích Dẫn</span>
+            <span class="nav-badge">NEW</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-k" aria-label="Tạo Bảng So Sánh">
+            <span class="nav-icon" aria-hidden="true">📊</span>
+            <span class="nav-label">Tạo Bảng So Sánh</span>
+            <span class="nav-badge">NEW</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-l" aria-label="Vẽ Lưu Đồ">
+            <span class="nav-icon" aria-hidden="true">🔀</span>
+            <span class="nav-label">Vẽ Lưu Đồ</span>
+            <span class="nav-badge">NEW</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-m" aria-label="Đánh Giá Tính Nguyên Bản & Văn Phong">
+            <span class="nav-icon" aria-hidden="true">🧪</span>
+            <span class="nav-label">Đánh Giá Tính Nguyên Bản & Văn Phong</span>
+            <span class="nav-badge">NEW</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-n" aria-label="Tìm Nguồn Tham Khảo">
+            <span class="nav-icon" aria-hidden="true">🔎</span>
+            <span class="nav-label">Tìm Nguồn Tham Khảo</span>
+            <span class="nav-badge">NEW</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="feature-o" aria-label="Tóm Tắt Tự Động">
+            <span class="nav-icon" aria-hidden="true">🧠</span>
+            <span class="nav-label">Tóm Tắt Tự Động</span>
+            <span class="nav-badge">NEW</span>
+          </button>
+        </li>
+
+        <li class="nav-divider"></li>
+
+        <li class="nav-item">
+          <button class="nav-btn" data-target="chat-panel" aria-label="Chat Tự Do">
+            <span class="nav-icon" aria-hidden="true">💬</span>
+            <span class="nav-label">Chat Tự Do</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-btn" data-target="history-panel" aria-label="Lịch Sử">
+            <span class="nav-icon" aria-hidden="true">📜</span>
+            <span class="nav-label">Lịch Sử</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <button id="settings-btn" class="settings-btn" aria-label="Cài đặt">
+        <span class="nav-icon" aria-hidden="true">⚙️</span>
+        <span class="nav-label">Cài đặt</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===================== SIDEBAR OVERLAY ===================== -->
+  <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main class="main-content" id="main-content" role="main">
+
+    <!-- HEADER BAR -->
+    <header class="header-bar" id="header-bar">
+      <div class="header-left">
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Mở menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+        <h2 id="page-title" class="page-title">🏠 Trang chủ</h2>
+      </div>
+      <div class="header-right">
+        <div id="api-status" class="api-status" aria-label="Trạng thái kết nối API">
+          <span id="status-dot" class="status-dot disconnected"></span>
+          <span id="status-text" class="status-text">Chưa kết nối</span>
+        </div>
+      </div>
+      <div id="progress-bar" class="progress-bar">
+        <div class="progress-bar-fill"></div>
+      </div>
+    </header>
+
+    <!-- CONTENT AREA -->
+    <div class="content-area" id="content-area">
+      <div class="content-scroll">
+
+        <!-- ==================== DASHBOARD ==================== -->
+        <section class="feature-panel active" id="dashboard">
+          <div class="dashboard-welcome">
+            <h2>Chào mừng đến với ReportAI</h2>
+            <p>Trợ lý AI giúp sinh viên viết báo cáo kỹ thuật chuyên nghiệp</p>
+          </div>
+
+          <div class="dashboard-stats">
+            <div class="stat-card">
+              <span class="stat-value" id="stat-total-uses">0</span>
+              <span class="stat-label">Lần sử dụng</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" id="stat-saved">0</span>
+              <span class="stat-label">Đã lưu</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-value" id="stat-chat">0</span>
+              <span class="stat-label">Tin nhắn</span>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <div class="dashboard-card" data-target="feature-a">
+              <div class="dashboard-card-icon">📋</div>
+              <div class="dashboard-card-title">Tạo Dàn Bài</div>
+              <div class="dashboard-card-desc">Tạo cấu trúc báo cáo hoàn chỉnh</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-b">
+              <div class="dashboard-card-icon">✍️</div>
+              <div class="dashboard-card-title">Viết Nội Dung</div>
+              <div class="dashboard-card-desc">Viết chi tiết từng phần báo cáo</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-c">
+              <div class="dashboard-card-icon">🔄</div>
+              <div class="dashboard-card-title">Viết Lại Văn Bản</div>
+              <div class="dashboard-card-desc">Chuyển sang văn phong học thuật</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-d">
+              <div class="dashboard-card-icon">🏗️</div>
+              <div class="dashboard-card-title">Mô Tả Hệ Thống</div>
+              <div class="dashboard-card-desc">Mô tả kiến trúc và luồng dữ liệu</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-e">
+              <div class="dashboard-card-icon">🖼️</div>
+              <div class="dashboard-card-title">Mô Tả Hình Ảnh</div>
+              <div class="dashboard-card-desc">Tạo mô tả cho hình vẽ, sơ đồ</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-f">
+              <div class="dashboard-card-icon">📊</div>
+              <div class="dashboard-card-title">Viết Kết Luận</div>
+              <div class="dashboard-card-desc">Viết kết luận và hướng phát triển</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-g">
+              <div class="dashboard-card-icon">✅</div>
+              <div class="dashboard-card-title">Kiểm Tra Chất Lượng</div>
+              <div class="dashboard-card-desc">Đánh giá và góp ý cải thiện</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-h">
+              <div class="dashboard-card-icon">📐</div>
+              <div class="dashboard-card-title">Định Dạng Word</div>
+              <div class="dashboard-card-desc">Hướng dẫn trình bày trong Word</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-i">
+              <div class="dashboard-card-icon">💡</div>
+              <div class="dashboard-card-title">Đề Xuất Cải Tiến</div>
+              <div class="dashboard-card-desc">Phân tích và đề xuất nâng cao</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-j">
+              <div class="dashboard-card-icon">📚</div>
+              <div class="dashboard-card-title">Tạo Trích Dẫn</div>
+              <div class="dashboard-card-desc">Tạo trích dẫn APA, IEEE chuẩn</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-k">
+              <div class="dashboard-card-icon">📊</div>
+              <div class="dashboard-card-title">Tạo Bảng So Sánh</div>
+              <div class="dashboard-card-desc">So sánh phương án, công nghệ</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-l">
+              <div class="dashboard-card-icon">🔀</div>
+              <div class="dashboard-card-title">Vẽ Lưu Đồ</div>
+              <div class="dashboard-card-desc">Vẽ lưu đồ thuật toán, sơ đồ hệ thống</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-m">
+              <div class="dashboard-card-icon">🧪</div>
+              <div class="dashboard-card-title">Đánh Giá Tính Nguyên Bản & Văn Phong</div>
+              <div class="dashboard-card-desc">Đánh giá mức độ độc đáo và đề xuất paraphrase</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-n">
+              <div class="dashboard-card-icon">🔎</div>
+              <div class="dashboard-card-title">Tìm Nguồn Tham Khảo</div>
+              <div class="dashboard-card-desc">Gợi ý tài liệu liên quan và trích dẫn tự động</div>
+            </div>
+            <div class="dashboard-card" data-target="feature-o">
+              <div class="dashboard-card-icon">🧠</div>
+              <div class="dashboard-card-title">Tóm Tắt Tự Động</div>
+              <div class="dashboard-card-desc">Rút gọn nội dung dài thành bản tóm tắt súc tích</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE A: Tạo Dàn Bài ==================== -->
+        <section class="feature-panel" id="feature-a">
+          <div class="panel-header">
+            <h3 class="panel-title">Tạo Dàn Bài</h3>
+            <p class="panel-description">Tạo dàn bài báo cáo kỹ thuật hoàn chỉnh theo chuẩn học thuật</p>
+          </div>
+          <form class="feature-form" id="form-feature-a">
+            <div class="form-group">
+              <label class="form-label" for="field-a-topic">Chủ đề báo cáo <span class="required">*</span></label>
+              <input type="text" class="form-input" id="field-a-topic" name="topic" placeholder="VD: Hệ thống giám sát nhiệt độ, độ ẩm sử dụng IoT" required>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="field-a-field">Lĩnh vực <span class="required">*</span></label>
+                <select class="form-select" id="field-a-field" name="field" required>
+                  <option value="">--Chọn lĩnh vực--</option>
+                  <option value="IoT">IoT</option>
+                  <option value="Viễn thông">Viễn thông</option>
+                  <option value="Hệ thống nhúng">Hệ thống nhúng</option>
+                  <option value="CNTT">CNTT</option>
+                  <option value="Điện tử">Điện tử</option>
+                  <option value="Cơ điện tử">Cơ điện tử</option>
+                  <option value="AI/ML">AI/ML</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-a-reportType">Loại báo cáo <span class="required">*</span></label>
+                <select class="form-select" id="field-a-reportType" name="reportType" required>
+                  <option value="">--Chọn loại--</option>
+                  <option value="Báo cáo Thực tập">Báo cáo Thực tập</option>
+                  <option value="Đồ án môn học">Đồ án môn học</option>
+                  <option value="Luận văn tốt nghiệp">Luận văn tốt nghiệp</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-a-description">Mô tả thêm</label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-a-description" name="description" rows="3" placeholder="Thông tin bổ sung về báo cáo (không bắt buộc)..."></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-a">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Tạo Dàn Bài</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-a" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+            <div class="quick-templates">
+              <div class="quick-templates-label">Mẫu nhanh:</div>
+              <div class="template-chips">
+                <button type="button" class="template-chip" data-template="iot-temp">🌡️ IoT giám sát nhiệt độ</button>
+                <button type="button" class="template-chip" data-template="smart-home">🏠 Smart Home</button>
+                <button type="button" class="template-chip" data-template="app-qlsv">📱 App quản lý sinh viên</button>
+                <button type="button" class="template-chip" data-template="robot-line">🤖 Robot dò line</button>
+              </div>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-a">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-a" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-a"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-a"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-a"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-a" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-a">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-a">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE B: Viết Nội Dung ==================== -->
+        <section class="feature-panel" id="feature-b">
+          <div class="panel-header">
+            <h3 class="panel-title">Viết Nội Dung</h3>
+            <p class="panel-description">Viết nội dung chi tiết cho từng phần/mục</p>
+          </div>
+          <form class="feature-form" id="form-feature-b">
+            <div class="form-group">
+              <label class="form-label" for="field-b-sectionTitle">Tên phần/mục <span class="required">*</span></label>
+              <input type="text" class="form-input" id="field-b-sectionTitle" name="sectionTitle" placeholder="VD: Chương 2 - Cơ sở lý thuyết" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-b-topicDesc">Mô tả chủ đề <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-b-topicDesc" name="topicDesc" rows="3" placeholder="Mô tả nội dung cần viết..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-b-keyPoints">Các ý chính <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-b-keyPoints" name="keyPoints" rows="4" placeholder="Liệt kê các ý chính..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-b-context">Ngữ cảnh bổ sung</label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-b-context" name="context" rows="2" placeholder="Thông tin ngữ cảnh thêm (không bắt buộc)..."></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-b">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Viết Nội Dung</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-b" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-b">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-b" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-b"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-b"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-b"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-b" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-b">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-b">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE C: Viết Lại Văn Bản ==================== -->
+        <section class="feature-panel" id="feature-c">
+          <div class="panel-header">
+            <h3 class="panel-title">Viết Lại Văn Bản</h3>
+            <p class="panel-description">Chuyển văn bản thường thành văn phong học thuật</p>
+          </div>
+          <form class="feature-form" id="form-feature-c">
+            <div class="form-group">
+              <label class="form-label" for="field-c-originalText">Văn bản gốc <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea form-textarea-lg" id="field-c-originalText" name="originalText" rows="8" placeholder="Dán văn bản cần viết lại..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-c">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Viết Lại</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-c" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-c">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-c" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-c"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-c"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-c"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-c" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-c">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-c">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE D: Mô Tả Hệ Thống ==================== -->
+        <section class="feature-panel" id="feature-d">
+          <div class="panel-header">
+            <h3 class="panel-title">Mô Tả Hệ Thống</h3>
+            <p class="panel-description">Mô tả kiến trúc hệ thống và luồng dữ liệu</p>
+          </div>
+          <form class="feature-form" id="form-feature-d">
+            <div class="form-group">
+              <label class="form-label" for="field-d-projectName">Tên dự án <span class="required">*</span></label>
+              <input type="text" class="form-input" id="field-d-projectName" name="projectName" placeholder="VD: Hệ thống Smart Home" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-d-components">Các thành phần <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-d-components" name="components" rows="4" placeholder="VD: ESP32, DHT22, MQTT, Firebase" required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-d-description">Mô tả thêm</label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-d-description" name="description" rows="3" placeholder="Thông tin bổ sung (không bắt buộc)..."></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-d">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Tạo Mô Tả</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-d" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-d">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-d" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-d"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-d"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-d"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-d" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-d">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-d">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE E: Mô Tả Hình Ảnh ==================== -->
+        <section class="feature-panel" id="feature-e">
+          <div class="panel-header">
+            <h3 class="panel-title">Mô Tả Hình Ảnh</h3>
+            <p class="panel-description">Tạo mô tả chuyên nghiệp cho hình vẽ, sơ đồ</p>
+          </div>
+          <form class="feature-form" id="form-feature-e">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="field-e-figureNumber">Số hình <span class="required">*</span></label>
+                <input type="text" class="form-input" id="field-e-figureNumber" name="figureNumber" placeholder="1.1" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-e-figureType">Loại hình <span class="required">*</span></label>
+                <select class="form-select" id="field-e-figureType" name="figureType" required>
+                  <option value="">--Chọn loại--</option>
+                  <option value="Sơ đồ khối">Sơ đồ khối</option>
+                  <option value="Lưu đồ thuật toán">Lưu đồ thuật toán</option>
+                  <option value="Sơ đồ mạch">Sơ đồ mạch</option>
+                  <option value="Giao diện">Giao diện</option>
+                  <option value="Biểu đồ">Biểu đồ</option>
+                  <option value="Khác">Khác</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-e-figureDesc">Mô tả hình <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-e-figureDesc" name="figureDesc" rows="4" placeholder="Mô tả nội dung hình vẽ, sơ đồ..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-e">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Tạo Mô Tả</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-e" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-e">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-e" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-e"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-e"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-e"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-e" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-e">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-e">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE F: Viết Kết Luận ==================== -->
+        <section class="feature-panel" id="feature-f">
+          <div class="panel-header">
+            <h3 class="panel-title">Viết Kết Luận</h3>
+            <p class="panel-description">Viết phần kết luận hoàn chỉnh</p>
+          </div>
+          <form class="feature-form" id="form-feature-f">
+            <div class="form-group">
+              <label class="form-label" for="field-f-projectSummary">Tóm tắt dự án <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-f-projectSummary" name="projectSummary" rows="4" placeholder="Tóm tắt nội dung chính của dự án..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-f-results">Kết quả đạt được <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-f-results" name="results" rows="4" placeholder="Liệt kê các kết quả đã đạt được..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-f-limitations">Hạn chế</label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-f-limitations" name="limitations" rows="3" placeholder="Các hạn chế của dự án (không bắt buộc)..."></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-f">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Viết Kết Luận</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-f" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-f">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-f" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-f"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-f"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-f"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-f" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-f">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-f">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE G: Kiểm Tra Chất Lượng ==================== -->
+        <section class="feature-panel" id="feature-g">
+          <div class="panel-header">
+            <h3 class="panel-title">Kiểm Tra Chất Lượng</h3>
+            <p class="panel-description">Đánh giá toàn diện nội dung, văn phong, trình bày và cấu trúc báo cáo</p>
+          </div>
+          <form class="feature-form" id="form-feature-g">
+            <div class="form-group">
+              <label class="form-label" for="field-g-file">Tải file báo cáo lên</label>
+              <input class="form-input file-input" type="file" id="field-g-file" accept=".txt,.md,.docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+              <p class="form-hint">Hỗ trợ .txt, .md và .docx. Nội dung sẽ được tự động đưa vào ô kiểm tra bên dưới.</p>
+              <div class="file-upload-meta" id="field-g-file-name">Chưa có file nào được chọn</div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="field-g-reportType">Loại báo cáo</label>
+                <select class="form-select" id="field-g-reportType" name="reportType">
+                  <option value="">--Chọn loại--</option>
+                  <option value="Đồ án môn học">Đồ án môn học</option>
+                  <option value="Báo cáo Thực tập">Báo cáo Thực tập</option>
+                  <option value="Luận văn tốt nghiệp">Luận văn tốt nghiệp</option>
+                  <option value="Báo cáo chuyên đề">Báo cáo chuyên đề</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-g-context">Ngữ cảnh bổ sung</label>
+                <input type="text" class="form-input" id="field-g-context" name="context" placeholder="VD: Ngành CNTT, giảng viên yêu cầu...">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-g-content">Nội dung cần kiểm tra <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea form-textarea-lg" id="field-g-content" name="content" rows="10" placeholder="Dán nội dung báo cáo cần kiểm tra hoặc tải file lên..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-g">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Kiểm Tra</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-g" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-g">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-g" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-g"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-g"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-g"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-g" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-g">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-g">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE H: Định Dạng Word ==================== -->
+        <section class="feature-panel" id="feature-h">
+          <div class="panel-header">
+            <h3 class="panel-title">Hướng Dẫn Định Dạng Word</h3>
+            <p class="panel-description">Hướng dẫn trình bày báo cáo trong Word</p>
+          </div>
+          <form class="feature-form" id="form-feature-h">
+            <div class="form-group">
+              <label class="form-label" for="field-h-structure">Cấu trúc báo cáo <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-h-structure" name="structure" rows="5" placeholder="Liệt kê cấu trúc các phần trong báo cáo..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-h-requirements">Yêu cầu đặc biệt</label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-h-requirements" name="requirements" rows="3" placeholder="VD: Heading, mục lục, đánh số hình..."></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-h">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Tạo Hướng Dẫn</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-h" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-h">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-h" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-h"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-h"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-h"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-h" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-h">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-h">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE I: Đề Xuất Cải Tiến ==================== -->
+        <section class="feature-panel" id="feature-i">
+          <div class="panel-header">
+            <h3 class="panel-title">Đề Xuất Cải Tiến</h3>
+            <p class="panel-description">Phân tích và đề xuất cải thiện</p>
+          </div>
+          <form class="feature-form" id="form-feature-i">
+            <div class="form-group">
+              <label class="form-label" for="field-i-content">Nội dung cần phân tích <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea form-textarea-lg" id="field-i-content" name="content" rows="10" placeholder="Dán nội dung cần phân tích và đề xuất cải tiến..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-i">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Đề Xuất Cải Tiến</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-i" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-i">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-i" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-i"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-i"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-i"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-i" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-i">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-i">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE J: Tạo Trích Dẫn ==================== -->
+        <section class="feature-panel" id="feature-j">
+          <div class="panel-header">
+            <h3 class="panel-title">Tạo Trích Dẫn & Tài Liệu Tham Khảo</h3>
+            <p class="panel-description">Tạo trích dẫn và danh mục tài liệu tham khảo theo chuẩn APA, IEEE</p>
+          </div>
+          <form class="feature-form" id="form-feature-j">
+            <div class="form-group">
+              <label class="form-label" for="field-j-citationStyle">Định dạng trích dẫn <span class="required">*</span></label>
+              <select class="form-select" id="field-j-citationStyle" name="citationStyle" required>
+                <option value="IEEE">IEEE</option>
+                <option value="APA">APA</option>
+                <option value="Harvard">Harvard</option>
+                <option value="Chuẩn Việt Nam">Chuẩn Việt Nam</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-j-references">Thông tin tài liệu <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-j-references" name="references" rows="8" placeholder="Nhập thông tin tài liệu (mỗi dòng một tài liệu):&#10;VD: Nguyễn Văn A, IoT căn bản, NXB Bách Khoa, 2023&#10;John Smith, Machine Learning, Springer, 2022&#10;https://example.com/article" required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-j-context">Ngữ cảnh sử dụng</label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-j-context" name="context" rows="2" placeholder="Ngữ cảnh sử dụng trích dẫn..."></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-j">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Tạo Trích Dẫn</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-j" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-j">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-j" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-j"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-j"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-j"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-j" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-j">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-j">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE K: Tạo Bảng So Sánh ==================== -->
+        <section class="feature-panel" id="feature-k">
+          <div class="panel-header">
+            <h3 class="panel-title">Tạo Bảng So Sánh</h3>
+            <p class="panel-description">Tạo bảng so sánh các phương án, công nghệ, linh kiện</p>
+          </div>
+          <form class="feature-form" id="form-feature-k">
+            <div class="form-group">
+              <label class="form-label" for="field-k-comparisonTopic">Chủ đề so sánh <span class="required">*</span></label>
+              <input type="text" class="form-input" id="field-k-comparisonTopic" name="comparisonTopic" placeholder="VD: So sánh vi điều khiển ESP32 và Arduino" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-k-criteria">Tiêu chí so sánh <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-k-criteria" name="criteria" rows="3" placeholder="Các tiêu chí so sánh (mỗi dòng một tiêu chí):&#10;VD: Giá thành&#10;Tốc độ xử lý&#10;Kết nối WiFi" required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-k-options">Các phương án <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-k-options" name="options" rows="3" placeholder="Các phương án so sánh:&#10;VD: ESP32&#10;Arduino Uno&#10;STM32" required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-k-context">Ngữ cảnh bổ sung</label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-k-context" name="context" rows="2" placeholder="Thông tin ngữ cảnh thêm (không bắt buộc)..."></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-k">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Tạo Bảng So Sánh</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-k" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-k">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-k" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-k"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-k"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-k"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-k" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-k">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-k">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE L: Vẽ Lưu Đồ ==================== -->
+        <section class="feature-panel" id="feature-l">
+          <div class="panel-header">
+            <h3 class="panel-title">Vẽ Lưu Đồ Thuật Toán</h3>
+            <p class="panel-description">Tạo lưu đồ thuật toán, sơ đồ quy trình, sơ đồ hệ thống bằng Mermaid.js</p>
+          </div>
+          <form class="feature-form" id="form-feature-l">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="field-l-diagramType">Loại sơ đồ <span class="required">*</span></label>
+                <select class="form-select" id="field-l-diagramType" name="diagramType" required>
+                  <option value="flowchart">Lưu đồ thuật toán (flowchart)</option>
+                  <option value="sequence">Sơ đồ tuần tự (sequence)</option>
+                  <option value="state">Sơ đồ trạng thái (state)</option>
+                  <option value="class">Sơ đồ lớp (class)</option>
+                  <option value="block">Sơ đồ khối (block)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-l-diagramDirection">Hướng <span class="required">*</span></label>
+                <select class="form-select" id="field-l-diagramDirection" name="diagramDirection">
+                  <option value="TD" selected>Trên xuống dưới (TD)</option>
+                  <option value="LR">Trái sang phải (LR)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-l-algorithmDesc">Mô tả thuật toán/quy trình <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea" id="field-l-algorithmDesc" name="algorithmDesc" rows="6" placeholder="Mô tả thuật toán hoặc quy trình:&#10;VD: Bắt đầu, đọc cảm biến nhiệt độ, nếu nhiệt độ > 30 thì bật quạt, ngược lại tắt quạt, hiển thị kết quả, kết thúc" required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-l">
+                <span class="btn-icon">✨</span>
+                <span class="btn-text">Tạo Lưu Đồ</span>
+                <span class="btn-loader"></span>
+              </button>
+              <button type="button" class="btn-regenerate" id="btn-regenerate-l" style="display:none">
+                🔄 Tạo lại
+              </button>
+            </div>
+            <div class="quick-templates">
+              <div class="quick-templates-label">Mẫu lưu đồ:</div>
+              <div class="template-chips">
+                <button type="button" class="template-chip" data-flowchart-template="sensor-read">🌡️ Đọc cảm biến</button>
+                <button type="button" class="template-chip" data-flowchart-template="login">🔐 Đăng nhập</button>
+                <button type="button" class="template-chip" data-flowchart-template="mqtt">📡 Gửi MQTT</button>
+                <button type="button" class="template-chip" data-flowchart-template="pid-control">🎛️ Điều khiển PID</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Flowchart Workspace (outside form) -->
+          <div class="flowchart-workspace" id="flowchart-workspace" style="display:none">
+            <div class="flowchart-code-panel">
+              <div class="flowchart-code-header">
+                <span class="flowchart-code-title">Mermaid Code</span>
+                <div style="display:flex;gap:6px">
+                  <button type="button" class="btn-action-sm btn-copy" data-output="flowchart-code-editor">📋 Sao chép code</button>
+                  <button type="button" class="btn-action-sm" id="btn-update-preview">🔄 Cập nhật</button>
+                </div>
+              </div>
+              <textarea class="flowchart-code-editor" id="flowchart-code-editor" placeholder="Mermaid code sẽ hiển thị ở đây..."></textarea>
+            </div>
+            <div class="flowchart-preview-panel">
+              <div class="flowchart-preview-header">
+                <span class="flowchart-code-title">Xem trước</span>
+                <div style="display:flex;gap:6px">
+                  <button type="button" class="btn-action-sm" id="btn-toggle-bg">🌗 Nền</button>
+                  <button type="button" class="btn-action-sm" id="btn-zoom-in">🔍+</button>
+                  <button type="button" class="btn-action-sm" id="btn-zoom-out">🔍-</button>
+                </div>
+              </div>
+              <div class="flowchart-preview-content" id="flowchart-preview-content">
+                <div class="flowchart-preview-placeholder">
+                  <span class="placeholder-icon">🔀</span>
+                  <p>Lưu đồ sẽ hiển thị tại đây</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flowchart-actions" id="flowchart-actions" style="display:none">
+            <button type="button" class="btn-action-sm" id="btn-export-png">🖼️ Xuất PNG</button>
+            <button type="button" class="btn-action-sm" id="btn-export-svg">📐 Xuất SVG</button>
+            <button type="button" class="btn-action-sm" id="btn-fullscreen-diagram" title="Toàn màn hình">⛶ Phóng to</button>
+          </div>
+
+          <!-- Small output wrapper for AI text description -->
+          <div class="output-wrapper" id="output-wrapper-l">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+              <div class="output-actions">
+                <button class="btn-action-sm btn-copy" data-output="output-l" title="Sao chép">📋 Sao chép</button>
+                <div class="export-dropdown">
+                  <button class="btn-action-sm btn-export-trigger">📥 Xuất ▾</button>
+                  <div class="export-menu">
+                    <button class="export-menu-item" data-format="txt" data-output="output-l"><span class="export-icon">📄</span> Text (.txt)</button>
+                    <button class="export-menu-item" data-format="md" data-output="output-l"><span class="export-icon">📝</span> Markdown (.md)</button>
+                    <button class="export-menu-item" data-format="docx" data-output="output-l"><span class="export-icon">📘</span> Word (.docx)</button>
+                  </div>
+                </div>
+                <button class="btn-action-sm btn-fullscreen" data-target="output-wrapper-l" title="Toàn màn hình">⛶</button>
+              </div>
+            </div>
+            <div class="output-content" id="output-l">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">📄</span>
+                <p>Kết quả sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-l">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tạo nội dung...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE M: KIỂM TRA ĐẠO VĂN ==================== -->
+        <section class="feature-panel" id="feature-m">
+          <div class="panel-header">
+            <h3 class="panel-title">Đánh Giá Tính Nguyên Bản & Văn Phong</h3>
+            <p class="panel-description">Đánh giá mức độ độc đáo về cách diễn đạt và đề xuất cách paraphrase để tăng tính nguyên bản</p>
+          </div>
+          <form class="feature-form" id="form-feature-m">
+            <div class="form-group">
+              <label class="form-label" for="field-m-text">Nội dung cần kiểm tra <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea form-textarea-lg" id="field-m-text" name="text" rows="10" placeholder="Dán đoạn văn hoặc toàn bộ báo cáo cần kiểm tra đạo văn..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-m-threshold">Ngưỡng cảnh báo</label>
+              <select class="form-select" id="field-m-threshold" name="threshold">
+                <option value="0.6">60% trở lên</option>
+                <option value="0.7" selected>70% trở lên</option>
+                <option value="0.8">80% trở lên</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-m">
+                <span class="btn-icon">🛡️</span>
+                <span class="btn-text">Kiểm Tra Đạo Văn</span>
+                <span class="btn-loader"></span>
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-m">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+            </div>
+            <div class="output-content" id="output-m">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">🛡️</span>
+                <p>Kết quả kiểm tra đạo văn sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-m">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang phân tích...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE N: TÌM NGUỒN THAM KHẢO ==================== -->
+        <section class="feature-panel" id="feature-n">
+          <div class="panel-header">
+            <h3 class="panel-title">Tìm Nguồn Tham Khảo</h3>
+            <p class="panel-description">Tìm tài liệu liên quan, gợi ý nguồn và tạo trích dẫn theo chuẩn</p>
+          </div>
+          <form class="feature-form" id="form-feature-n">
+            <div class="form-group">
+              <label class="form-label" for="field-n-query">Chủ đề hoặc đoạn văn cần tìm nguồn <span class="required">*</span></label>
+              <textarea class="form-textarea" id="field-n-query" name="query" rows="4" placeholder="VD: ứng dụng blockchain trong chuỗi cung ứng" required></textarea>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="field-n-style">Định dạng trích dẫn</label>
+                <select class="form-select" id="field-n-style" name="citationStyle">
+                  <option value="APA">APA</option>
+                  <option value="IEEE">IEEE</option>
+                  <option value="Vancouver">Vancouver</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="field-n-count">Số nguồn đề xuất</label>
+                <select class="form-select" id="field-n-count" name="count">
+                  <option value="3">3 nguồn</option>
+                  <option value="5" selected>5 nguồn</option>
+                  <option value="8">8 nguồn</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-n">
+                <span class="btn-icon">🔎</span>
+                <span class="btn-text">Tìm Nguồn</span>
+                <span class="btn-loader"></span>
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-n">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+            </div>
+            <div class="output-content" id="output-n">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">🔎</span>
+                <p>Kết quả đề xuất nguồn tham khảo sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-n">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tìm kiếm...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== FEATURE O: TÓM TẮT TỰ ĐỘNG ==================== -->
+        <section class="feature-panel" id="feature-o">
+          <div class="panel-header">
+            <h3 class="panel-title">Tóm Tắt Tự Động</h3>
+            <p class="panel-description">Rút gọn đoạn văn dài thành bản tóm tắt ngắn gọn, súc tích</p>
+          </div>
+          <form class="feature-form" id="form-feature-o">
+            <div class="form-group">
+              <label class="form-label" for="field-o-text">Văn bản cần tóm tắt <span class="required">*</span></label>
+              <div class="textarea-wrapper">
+                <textarea class="form-textarea form-textarea-lg" id="field-o-text" name="text" rows="10" placeholder="Dán nội dung dài cần tóm tắt..." required></textarea>
+                <span class="word-counter">0 từ</span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="field-o-length">Độ dài tóm tắt</label>
+              <select class="form-select" id="field-o-length" name="length">
+                <option value="50">50 từ</option>
+                <option value="100" selected>100 từ</option>
+                <option value="150">150 từ</option>
+              </select>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn-generate" id="btn-generate-o">
+                <span class="btn-icon">🧠</span>
+                <span class="btn-text">Tóm Tắt</span>
+                <span class="btn-loader"></span>
+              </button>
+            </div>
+          </form>
+          <div class="output-wrapper" id="output-wrapper-o">
+            <div class="output-header">
+              <h4 class="output-title">Kết quả</h4>
+            </div>
+            <div class="output-content" id="output-o">
+              <div class="output-placeholder">
+                <span class="placeholder-icon">🧠</span>
+                <p>Bản tóm tắt sẽ hiển thị tại đây...</p>
+              </div>
+            </div>
+            <div class="output-loading" id="loading-o">
+              <div class="loading-spinner"></div>
+              <p class="loading-text">Đang tóm tắt...</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== CHAT PANEL ==================== -->
+        <section class="feature-panel" id="chat-panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Chat Tự Do</h3>
+            <p class="panel-description">Hỏi đáp tự do về báo cáo kỹ thuật</p>
+          </div>
+          <div class="chat-actions">
+            <button type="button" class="btn-action-sm" id="btn-clear-chat">🗑️ Xóa lịch sử</button>
+          </div>
+          <div class="chat-container" id="chat-container">
+            <div class="chat-messages" id="chat-messages">
+              <div class="chat-message chat-message-ai">
+                <div class="chat-avatar" aria-hidden="true">🤖</div>
+                <div class="chat-bubble">
+                  <p>Xin chào! Tôi là <strong>ReportAI</strong> - trợ lý viết báo cáo kỹ thuật. 👋</p>
+                  <p>Bạn có thể hỏi tôi về:</p>
+                  <ul>
+                    <li>📝 Cách viết báo cáo kỹ thuật</li>
+                    <li>📐 Quy cách trình bày Word</li>
+                    <li>🔧 Thuật ngữ chuyên ngành</li>
+                    <li>💡 Ý tưởng cho đề tài</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <div class="chat-input-wrapper">
+                <textarea class="chat-input" id="chat-input" rows="1" placeholder="Nhập tin nhắn..." aria-label="Nhập tin nhắn chat"></textarea>
+                <button class="chat-send-btn" id="chat-send-btn" disabled aria-label="Gửi tin nhắn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+              </div>
+              <p class="chat-disclaimer">ReportAI có thể mắc lỗi. Hãy kiểm tra lại thông tin quan trọng.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== HISTORY PANEL ==================== -->
+        <section class="feature-panel" id="history-panel">
+          <div class="panel-header">
+            <h3 class="panel-title">Lịch Sử</h3>
+            <p class="panel-description">Các nội dung đã tạo trước đó</p>
+          </div>
+          <div class="history-header">
+            <span id="history-count">0 mục</span>
+            <button type="button" class="btn-clear-history" id="btn-clear-history">🗑️ Xóa tất cả</button>
+          </div>
+          <div class="history-list" id="history-list">
+            <div class="history-empty" id="history-empty">
+              <span class="history-empty-icon">📭</span>
+              <p>Chưa có lịch sử nào</p>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- .content-scroll -->
+    </div><!-- .content-area -->
+  </main>
+</div><!-- .app-container -->
+
+<!-- ===================== SETTINGS MODAL ===================== -->
+<div class="modal-overlay" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h3 class="modal-title" id="settings-modal-title">⚙️ Cài đặt</h3>
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Đóng cài đặt">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form class="settings-form" id="settings-form">
+        <div class="form-group">
+          <label class="form-label" for="setting-api-key">API Key <span class="required">*</span></label>
+          <div class="input-with-toggle">
+            <input type="password" class="form-input" id="setting-api-key" placeholder="Nhập Gemini API Key..." autocomplete="off">
+            <button type="button" class="btn-toggle-visibility" id="btn-toggle-api-key" aria-label="Hiện/ẩn API Key"><span id="eye-icon">👁️</span></button>
+          </div>
+          <p class="form-hint">Lấy API Key miễn phí tại <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">Google AI Studio</a></p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="setting-exa-key">Exa API Key (tùy chọn)</label>
+          <input type="password" class="form-input" id="setting-exa-key" placeholder="Nhập Exa API Key để bật tìm kiếm nguồn thực tế..." autocomplete="off">
+          <p class="form-hint">Dùng cho tính năng tìm nguồn tham khảo thực tế</p>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="setting-model">Model</label>
+          <select class="form-select" id="setting-model">
+            <option value="gemini-2.0-flash">Gemini 2.0 Flash (Nhanh)</option>
+            <option value="gemini-2.5-flash" selected>Gemini 2.5 Flash (Cân bằng)</option>
+            <option value="gemini-2.5-pro">Gemini 2.5 Pro (Chất lượng cao)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="setting-temperature">Temperature: <span class="slider-value" id="temperature-value">0.7</span></label>
+          <input type="range" class="form-range" id="setting-temperature" min="0" max="1" step="0.1" value="0.7">
+          <div class="range-labels"><span>Chính xác (0.0)</span><span>Sáng tạo (1.0)</span></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="setting-max-tokens">Max Tokens</label>
+          <input type="number" class="form-input" id="setting-max-tokens" value="8192" min="256" max="65536" step="256">
+          <p class="form-hint">Số token tối đa (256 - 65536)</p>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-secondary" id="btn-modal-cancel" type="button">Đóng</button>
+      <button class="btn-primary" id="btn-modal-save" type="button"><span class="btn-icon">💾</span> Lưu cài đặt</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== HISTORY DETAIL MODAL ===================== -->
+<div class="modal-overlay" id="history-detail-modal" role="dialog" aria-modal="true" aria-labelledby="history-detail-modal-title">
+  <div class="modal-container" style="max-width:700px">
+    <div class="modal-header">
+      <h3 class="modal-title" id="history-detail-title">Chi tiết</h3>
+      <button class="modal-close-btn" id="history-detail-close" aria-label="Đóng chi tiết">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="output-content" id="history-detail-content" style="max-height:60vh;overflow-y:auto"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-action-sm btn-copy" data-output="history-detail-content">📋 Sao chép</button>
+      <button class="btn-secondary" id="history-detail-close-btn">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== TOAST CONTAINER ===================== -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
